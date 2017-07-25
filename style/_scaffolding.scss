@@ -1,0 +1,163 @@
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+html, body {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.cg-outer-wrapper {
+  height:100%;
+  background-color: $bg;
+}
+
+.cg-outer-nav-wrapper {
+  height: 100%;
+  float: left;
+
+  .cg-nav-wrapper {
+    height: 100%;
+  }
+
+  .cg-sub-nav {
+    position: fixed;
+    top: 0px;
+  }
+}
+
+.cg-outer-content-wrapper {
+  height: 100%;
+
+
+  .cg-outer-content-container {
+    height: 100%;
+    padding-top: 1px;
+    margin-top: -1px;
+  }
+}
+
+.cg-outer-top-bar-wrapper {
+  display: none;
+}
+
+
+.cg-show-mobile {
+  display: none !important;
+}
+
+.cg-hidden {
+  opacity: 0;
+}
+
+
+/* Hide the outer-nav-wrapper by default if on a small screen */
+.cg-device-mobile {
+  .cg-outer-top-bar-wrapper {
+    height: 60px;
+    display: block;
+  }
+
+  .cg-outer-content-wrapper {
+    margin-left: 0;
+    .cg-outer-content-container {
+      height: calc(100% - 60px);
+      width: 100%;
+      padding-top: 1px;
+      margin-top: -1px;
+    }
+  }
+
+  .cg-nav-collapsed {
+    .cg-outer-content-wrapper {
+      margin-left: 0;
+    }
+  }
+
+  .cg-show-mobile {
+    display: inherit !important;
+  }
+
+  .cg-hide-mobile {
+    display: none !important;
+  }
+}
+
+
+/* Outer wrapper transitions -- only happen on desktop devices */
+@media (min-width: 768px) {
+  .cg-outer-nav-wrapper {
+    transform-origin: left center;
+  }
+
+  .cg-outer-nav-wrapper-enter-active, .cg-outer-nav-wrapper-leave-active {
+    transition: all 0.6s ease;
+  }
+
+  .cg-outer-nav-wrapper-enter, .cg-outer-nav-wrapper-leave-active {
+    transform: translateX(100px) rotateY( 90deg );
+  }
+
+  .cg-outer-content-wrapper {
+    opacity: 1;
+  }
+
+  .cg-outer-content-wrapper-enter-active, .cg-outer-content-wrapper-leave-active {
+    transition: all 1.5s ease, margin-left 0.3s;
+  }
+
+  .cg-outer-content-wrapper-enter, .cg-outer-content-wrapper-leave-active {
+    opacity: 0;
+  }
+}
+
+.cg-content-wrapper {
+  $contentHeaderHeight: 3rem;
+  $contentSubheaderHeight: 3.7rem;
+
+  background-color: $bg;
+  padding: 1rem;
+  padding-bottom: 0;
+
+  &.no-padding {
+    padding: 0;
+  }
+
+  .cg-content-container {
+    padding: 1rem;
+    padding-bottom: 0;
+    background-color: $bg2;
+
+    &.no-padding {
+      padding: 0;
+      padding-top: 1px;
+      margin-top: -1px;
+    }
+
+    .header {
+      border-bottom: 1px $bg solid;
+      h1 {
+        margin-top: 0;
+      }
+    }
+
+    .content {
+      position: relative;
+    }
+  }
+}
+
+.cg-device-mobile {
+  .cg-content-wrapper {
+    padding: 0;
+  }
+}

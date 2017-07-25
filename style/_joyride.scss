@@ -1,0 +1,49 @@
+body.shepherd-active {
+	background-color: #000;
+	.cg-outer-wrapper {
+		opacity: 0.6;
+	}
+}
+
+.shepherd-element {
+	z-index: 100;
+	&.width300 {
+		max-width: 300px;
+	}
+	&.width400 {
+		max-width: 400px;
+	}
+	&.shepherd-theme-arrows.shepherd-has-title {
+		.shepherd-content {
+			header {
+				padding: 1.5em;
+				background: #fff;
+				position: relative;
+				h3 {
+					font-weight: bold;
+					font-family: $pnb;
+					line-height: 120%;
+				}
+				a.shepherd-cancel-link {
+					position: absolute;
+					top: 12px;
+					right: 12px;
+					font-size: 0.9em;
+				}
+			}
+			.shepherd-text {
+				padding: 0 1.5em;
+				padding-bottom: 1.5em;
+				color: $gray;
+				font-size: 0.9em;
+			}
+			footer {
+				padding: 1.5em;
+				a.shepherd-button {
+					background-color: $brand-primary;
+					text-transform: none;
+				}
+			}
+		}
+	}
+}

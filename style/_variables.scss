@@ -1,0 +1,152 @@
+// color palette
+
+$darkBlue: #075E89;
+$medBlue: #167EB2;
+$lightBlue: rgba(31, 146, 204, 0.4);
+$blue: #1F92CC;
+$darkOrange: #DD4B43;
+$medOrange: #FF6A62;
+$orange: #FF8162;
+$darkPink: #E36C93;
+$lightPink: rgba(247, 129, 168, 0.4);
+$pink: #F781A8;
+$darkGreen: #66DE99;
+$green: #79F0AC;
+$text: #293033;
+$text2: #3D4448;
+$subText: #9097A5;
+$subText2: #A6ADBC;
+$lines: #CACED7;
+$lines2: #D7DAE3;
+$bg: #F3F4F9;
+$bg2: #FFFFFF;
+
+// -- theme settings
+
+$gray-base: #EBEBF0;
+$gray-darker: #293033;
+$gray-dark: #3d4448;
+$gray: #868686;
+$gray-light: #caced7;
+$gray-lighter: #d5e0ef;
+
+$brand-primary: $blue;
+$brand-success: $green;
+$brand-info: $darkBlue;
+$brand-warning: $orange;
+$brand-danger: $darkPink;
+
+// scaffolding
+
+$body-bg: #f3f4f9;
+$text-color: $gray-dark;
+
+// typography
+
+$font-family-sans-serif: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-base: 15px;
+$font-size-h1: 24px;
+$font-size-h2: $font-size-base;
+$font-size-h3: 13px;
+$font-size-h4: 13px;
+$font-size-h5: 13px;
+$font-size-h6: 13px;
+
+$headings-font-weight: normal;
+
+// components
+
+$border-radius-base: 4px;
+$border-radius-large: 6px;
+$border-radius-small: 2px;
+$component-active-color: #fff;
+
+// tables
+
+$table-border-color: $gray-lighter;
+$table-bg-accent: $body-bg;
+
+// buttons
+
+$btn-default-border: $gray-lighter;
+
+// forms
+
+$input-color: $gray-dark;
+$input-border: $gray-lighter;
+
+$input-group-addon-bg: $body-bg;
+
+$state-succcess-text: $brand-success;
+$state-success-bg: lighten($brand-success, 25%);
+
+$state-info-text: $brand-info;
+$state-info-bg: lighten($brand-info, 50%);
+
+$state-warning-test: $brand-warning;
+$state-warning-bg: lighten($brand-warning, 25%);
+
+$state-danger-text: $brand-danger;
+$state-danger-bg: lighten($brand-danger, 25%);
+
+// z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-component-overlay: 900;
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-chart:             1020;
+$zindex-nav:               1030;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+$zindex-joyride:           1060;
+$zindex-tooltip:           1070 !default;
+$zindex-app-overlay:       1080;
+
+// labels
+
+$label-default-bg: $component-active-color;
+
+// modals
+
+$modal-backdrop-bg: linear-gradient(rgba(50,50,50,0.6), rgba(0,0,0,0.6));
+
+$modal-lg: 1200px;
+
+// alerts
+
+// panels
+
+$panel-bg: $component-active-color;
+
+$panel-inner-border: $gray-lighter;
+$panel-footer-bg: $body-bg;
+
+$panel-default-border: $gray-lighter;
+$panel-default-heading-bg: $body-bg;
+
+// wells
+
+$well-bg: $body-bg;
+
+// deprecated variables
+
+$text: $text-color;
+$text2: $gray-dark;
+$subText: $gray-light;
+$subText2: $gray-lighter;
+$lines: $gray-lighter;
+$lines2: $gray-lighter;
+$bg: $body-bg;
+$bg2: $component-active-color;
+
+$pnl: $font-family-sans-serif;
+$pnli: $font-family-sans-serif;
+$pnr: $font-family-sans-serif;
+$pnri: $font-family-sans-serif;
+$pnb: $font-family-sans-serif;
+$pnsb: $font-family-sans-serif;

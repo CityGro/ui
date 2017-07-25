@@ -1,0 +1,34 @@
+.cg-no-select {
+  -webkit-touch-callout: none; // iOS Safari 
+  -webkit-user-select: none;   // Chrome/Safari/Opera 
+  -khtml-user-select: none;    // Konqueror 
+  -moz-user-select: none;      // Firefox 
+  -ms-user-select: none;       // IE/Edge 
+  user-select: none;
+}
+
+.cg-yes-select {
+  -webkit-touch-callout: auto; // iOS Safari 
+  -webkit-user-select: auto;   // Chrome/Safari/Opera 
+  -khtml-user-select: auto;    // Konqueror 
+  -moz-user-select: auto;      // Firefox 
+  -ms-user-select: auto;       // IE/Edge 
+  user-select: auto;
+}
+
+//Intended to be used with a div that has it's height explicitly set
+.cg-scrollable {
+  -webkit-overflow-scrolling: touch;
+  &.cg-vertical {
+      overflow-y: auto;
+  }
+  &.cg-horizontal {
+      overflow-x: auto;
+  }
+}
+
+.cg-vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

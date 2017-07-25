@@ -1,0 +1,32 @@
+.panel {
+    &.panel-primary {
+        & > .panel-heading {
+            background-color: $panel-default-heading-bg;
+            color: $panel-default-text;
+        }
+    }
+    &.panel-success {
+        & > .panel-heading {
+            background-color: $panel-default-heading-bg;
+            color: $panel-default-text;
+        }
+    }
+    &.panel-info {
+        & > .panel-heading {
+            background-color: $panel-default-heading-bg;
+            color: $panel-default-text;
+        }
+    }
+    &.panel-warning {
+        & > .panel-heading {
+            background-color: $panel-default-heading-bg;
+            color: $panel-default-text;
+        }
+    }
+    &.panel-danger {
+        & > .panel-heading {
+            background-color: $panel-default-heading-bg;
+            color: $panel-default-text;
+        }
+    }
+}

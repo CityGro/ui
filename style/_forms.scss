@@ -1,0 +1,346 @@
+/* label */
+label {
+  font-weight: normal;
+  color: $gray;
+}
+
+/* select style */
+
+select.form-control,
+select {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: $padding-base-vertical 36px $padding-base-vertical $padding-base-horizontal;
+  font-size: 15px;
+  line-height: $line-height-computed;
+  color: $text-color;
+  border: 1px solid $lines;
+  border-radius: $border-radius-base;
+  /* this background image is the arrow on the right of the dropdown */
+  background: $bg2 url(../assets/images/dropdown-arrow-border.png) no-repeat 100% 0px;
+  outline: none;
+  /* gets rid of default select arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  cursor: pointer;
+  position: relative;
+
+  /* changes select dropdown border to blue when selected */
+  &:focus {
+    border-color: $medBlue;
+  }
+
+  /* changes color of placeholder text in select dropdown */
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &::-webkit-input-placeholder {
+    color: $lines;
+  }
+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &.no-dropdown-arrow {
+    background: none;
+    padding-right: 12px;
+  }
+
+  &.input-sm {
+    height: $input-height-small;
+    line-height: $input-height-small;
+    font-size: $font-size-small;
+    padding: 0 36px $padding-small-vertical $padding-small-horizontal;
+  }
+}
+
+
+
+/* style for select2 plugin dropdown menu */
+
+.select2-container {
+  width: 100% !important;
+  font-family: $pnr;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border-radius: 4px;
+  /* background image with dropdown arrow */
+  background: $bg2 url(../assets/images/dropdown-arrow.png) no-repeat 100% 0px;
+
+  /* removes blue outline */
+  *:focus{
+    outline:0px;
+  }
+
+  //style for singe dropdown box
+  .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 32px;
+    user-select: none;
+    -webkit-user-select: none;
+    list-style-type: none;
+    border: 1px solid $lines;
+    border-radius: 4px;
+    //style for single dropdown box after selection has been made
+    .select2-selection__rendered {
+      display: block;
+      padding-left: 8px;
+      padding-right: 35px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      list-style-type: none;
+      line-height: 32px;
+      text-align: left;
+    }
+    //style for single selection choice in the dropdown menu
+    .select2-selection__choice {
+      background-color: $green;
+      color: $bg2;
+      border: 1px solid $darkGreen;
+      border-radius: 4px;
+      padding: 3px 5px;
+      cursor: default;
+      float: left;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+    //color of placeholder text in single dropdown
+    .select2-selection__placeholder {
+      color: $lines;
+    }
+  }
+  //style for multiple dropdown box
+  .select2-selection--multiple {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    min-height: 32px;
+    vertical-align: middle;
+    line-height: 15px;
+    padding-bottom: 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    width: 100%;
+    border: 1px solid $lines;
+    border-radius: 4px;
+    //style for multiple dropdown box after selection has been made
+    .select2-selection__rendered{
+      display: inline-block;
+      padding: 0px 47px 0px 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      list-style-type: none;
+      box-sizing: border-box;
+      margin: 0;
+      width: 100%;
+      text-align: left;
+    }
+    //style for multiple selection choice in the dropdown menu
+    .select2-selection__choice {
+      background-color: $green;
+      color: $bg2;
+      border: 1px solid $darkGreen;
+      border-radius: 4px;
+      padding: 3px 5px;
+      cursor: default;
+      float: left;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+    //style for remove "x" in multiple select dropdown
+    .select2-selection__choice__remove{
+      color: $bg2;
+      margin-right: 6px;
+      margin-left: 6px;
+      float: right;
+      list-style-type: none;
+    }
+    //style for multiple select dropdown placeholder
+    .select2-selection__placeholder {
+      color: $lines;
+    }
+    //style for searchbox/input box in multiple select dropdown
+    .select2-search{
+      margin-top: 0px;
+      display: inline-block;
+      //change the style of the input field here
+      input {
+        // height: 24px !important;
+        // border: none;
+        // vertical-align: middle;
+        // line-height: 32px;
+        // display: block;
+        // width: 100% !important;
+        display: none;
+      }
+    }
+  }
+}
+// span.select2.select2-container--default.select2-container {
+//   width: 100% !important;
+// }
+
+.select2-search--hide {
+  display: none;
+}
+//dropdown menu search style for Select2 plugin (this style affects all dropdowns that use Select2 plugin)
+.select2-search--dropdown {
+
+    .select2-search__field {
+      padding: 4px;
+      width: 288px;
+      margin: 5px;
+      box-sizing: border-box;
+  }
+}
+
+.select2-dropdown--below {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.select2-dropdown--above {
+  margin-top: 0px;
+  position: absolute;
+  top: -17px;
+}
+.select2-container--open .select2-dropdown {
+    left: 0;
+}
+.select2-container--default .select2-results>.select2-results__options {
+    max-height: 45vh;
+}
+//dropdown menu style for Select2 plugin (this style affects all dropdowns that use Select2 plugin)
+.select2-dropdown {
+    background-color: $bg2;
+    border: 1px solid $lines;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    left: -100000px;
+    width: auto !important;
+    min-width: 170px;
+    max-width: 300px;
+    margin-top: 10px;
+    overflow: scroll;
+    z-index: 2;
+}
+//adds arrow on top for dropdown box
+.select2-dropdown:after, .select2-dropdown:before {
+  bottom: 100%;
+  right: 10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.select2-dropdown:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: $bg2;
+  border-width: 6px;
+  margin-left: -6px;
+}
+.select2-dropdown:before {
+  border-color: rgba(204, 204, 204, 0);
+  border-bottom-color: $lines;
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.select2-results {
+  padding: 0 0 0 0px;
+  margin: 4px 0px 0px 0px;
+  list-style: none;
+  .select2-results__options {
+    list-style: none;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+  }
+  .select2-results__option {
+    padding: 5px 5px 5px 5px;
+    width: 100%;
+  }
+  .select2-results__option:first-child {
+    padding-top: 10px;
+    background-position: 98% 6px;
+  }
+  .select2-results__option:last-child {
+    padding-bottom: 10px;
+    background-position: 98% 2px;
+  }
+  //background color for option that is being hovered over
+  .select2-results__option:hover {
+    background-color: $bg;
+  }
+  //background color for option that is clicked on
+  .select2-results__option:active,
+  .select2-results__option:focus {
+    background-color: $green;
+    color: $bg2;
+    width: 100%;
+    background-color: $green;
+  }
+}
+//background color for option that has already been clicked on
+.select2-results__option[aria-selected=true] {
+    background-color: $green !important;
+    color: $bg2;
+}
+
+//search/input style
+.select2-search{
+  margin-top: 3px;
+  list-style-type: none;
+  input {
+    height: 24px !important;
+    border: 1px solid $lines;
+  }
+}
+
+
+//hides select dropdown for Select2 plugin
+.select2-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+}
+
+//button dropdown style with Select2
+.btn-drop {
+  position: relative;
+    .select2-container{
+      position: absolute;
+      background: transparent;
+      border: none;
+      height: 32px;
+      top: 0;
+      right: 0;
+      .select2-selection--single {
+        border: none;
+      }
+    }
+    .select2-selection__rendered {
+      display: none !important;
+    }
+}

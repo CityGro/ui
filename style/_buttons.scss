@@ -1,0 +1,56 @@
+.btn {
+  background-color: $gray;
+  color: $component-active-color;
+
+  &.btn-default {
+    background-color: $component-active-color;
+    color: $text-color;
+  }
+
+  &.btn-primary {
+    background-color: $brand-primary;
+    color: #fff;
+  }
+
+  &.btn-success {
+    background-color: $brand-success;
+    color: #fff;
+  }
+
+  &.btn-info {
+    background-color: $brand-info;
+    color: #fff;
+  }
+
+  &.btn-warning {
+    background-color: $brand-warning;
+    color: #fff;
+  }
+
+  &.btn-danger {
+    background-color: $brand-danger;
+    color: #fff;
+  }
+
+  &.btn-link {
+    background-color: transparent;
+    color: $link-color;
+  }
+
+  &.btn-icon {
+    background-color: transparent;
+    border: none !important;
+    color: $text-color;
+    outline: none !important;
+    padding: $padding-xs-vertical $padding-xs-horizontal;
+  }
+
+  &.btn-dropdown {
+    background-image: url(../assets/images/dropdown-arrow-border.png);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    border-color: $gray-lighter;
+    text-align: left;
+  }
+}
+

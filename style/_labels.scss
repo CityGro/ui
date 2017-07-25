@@ -1,0 +1,35 @@
+.label {
+  background-color: $gray-light;
+  border: 1px solid $gray-dark;
+  color: $text-color;
+
+  &.label-primary {
+    color: #fff;
+    border-color: $darkBlue;
+    background-color: $brand-primary;
+  }
+
+  &.label-success {
+    color: #fff;
+    border-color: $darkGreen;
+    background-color: $brand-success;
+  }
+
+  &.label-info {
+    color: #fff;
+    border-color: $darkBlue;
+    background-color: $brand-info;
+  }
+
+  &.label-warning {
+    color: #fff;
+    border-color: $darkOrange;
+    background-color: $brand-warning;
+  }
+
+  &.label-danger {
+    color: #fff;
+    border-color: $darkPink;
+    background-color: $brand-danger;
+  }
+}
