@@ -11,6 +11,7 @@
     "build": "NODE_ENV=production SINGLE_FILE=true node build/build.js && rm dist/style.js dist/style.js.map",
     "lint": "eslint --ext .js,.vue src"
   },
+  "homepage": "https://gitlab.com/citygro/ui",
   "dependencies": {
     "@citygro/vue-modal": "^5.2.2",
     "bootstrap-sass": "^3.3.7",
