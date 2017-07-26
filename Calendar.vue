@@ -55,7 +55,7 @@
 <script>
 import Moment from 'moment'
 
-module.exports = {
+export default {
   props: {
     value: {
       default () {

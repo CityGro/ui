@@ -23,22 +23,6 @@ var webpackConfig = merge(baseWebpackConfig, {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('[name].js')
   },
-  externals: {
-    moment: 'moment',
-    'moment-timezone': 'moment-timezone',
-    jquery: 'jquery',
-    signature_pad: 'signature_pad',
-    'lodash/fp/map': 'lodash/fp/map',
-    'lodash/fp/rangeRight': 'lodash/fp/rangeRight',
-    'lodash/fp/entries': 'lodash/fp/entries',
-    'lodash/isNumber': 'lodash/isNumber',
-    'lodash/fp/flow': 'lodash/fp/flow',
-    'lodash/fp/range': 'lodash/fp/range',
-    'lodash/partialRight': 'lodash/partialRight',
-    'lodash/padStart': 'lodash/padStart',
-    'lodash/toNumber': 'lodash/toNumber',
-    'lodash/fp/reverse': 'lodash/fp/reverse'
-  },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
@@ -57,7 +41,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../static'),
+        from: path.resolve(__dirname, '../assets'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
