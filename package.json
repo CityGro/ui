@@ -1,6 +1,6 @@
 {
   "name": "@citygro/ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CityGro UI",
   "author": "carlos@citygro.com",
   "main": "index.js",
