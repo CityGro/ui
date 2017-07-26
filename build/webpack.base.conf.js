@@ -17,14 +17,11 @@ module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath,
-    library: '@citygro/field',
+    library: '@citygro/ui',
     libraryTarget: 'umd'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
-      '@': resolve('src')
-    }
+    extensions: ['.js', '.vue', '.json']
   },
   module: {
     rules: [

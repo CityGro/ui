@@ -35,7 +35,6 @@ module.exports = {
   },
   sassResources: [
     './style/_variables.scss',
-    './node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss',
     './node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/*.scss'
   ]
 }

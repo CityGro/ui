@@ -1,6 +1,8 @@
-// Highcharts
+// Font Awesome
 
-@import "highcharts";
+// https://stackoverflow.com/questions/33649761/how-do-i-load-font-awesome-using-scss-sass-in-webpack-using-relative-paths
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
 
 // Reset and dependencies
 
@@ -55,15 +57,11 @@
 
 // Custom styles
 
-@import "scaffolding";
 @import "headings";
 @import "buttons";
 @import "tables";
 @import "forms";
 @import "panels";
-@import "joyride";
 @import "labels";
-
 @import "modals";
-
-@import "utility";
+@import "utility"
