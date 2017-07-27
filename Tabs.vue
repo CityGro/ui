@@ -4,60 +4,7 @@
   </ul>
 </template>
 
-<script>
-export default {
-  props: {
-    align: {
-      type: String,
-      default: 'left'
-    },
-    border: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    tabsClass () {
-      return {
-        ['align-' + (this.align || 'left')]: true,
-        'hr': this.border
-      }
-    }
-  }
-}
-</script>
-
-<style lang="scss">
-  @mixin tab {
-    background-color: transparent;
-    color: $gray;
-    border: none;
-    border-bottom: 3px solid transparent;
-    transition: border-bottom-color ease 0.5s;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 25px;
-    padding-right: 25px;
-
-    &:hover {
-      cursor: pointer;
-      background-color: transparent;
-      border-bottom-color: $brand-primary;
-    }
-  }
-
-  @mixin active-tab {
-    border-bottom-color: $brand-primary;
-    font-weight: bold;
-    color: $text-color;
-
-    &:hover {
-      color: $text-color;
-      border: none;
-      border-bottom: 3px solid $lightBlue;
-   }
-  }
-
+<style lang="scss" scoped>
   ul.ui-tabs {
     display: flex;
     flex-direction: row;
@@ -92,20 +39,28 @@ export default {
       align-items: flex-end;
       justify-content: flex-end;
     }
-
-    & > li.active > a {
-      @include tab;
-      @include active-tab;
-    }
-
-    & > li > a[href],
-    & > li > a {
-      @include tab;
-
-      &.router-link-active {
-        @include active-tab;
-      }
-
-    }
   }
 </style>
+
+<script>
+export default {
+  props: {
+    align: {
+      type: String,
+      default: 'left'
+    },
+    border: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    tabsClass () {
+      return {
+        [`align-${this.align || 'left'}`]: true,
+        'hr': this.border
+      }
+    }
+  }
+}
+</script>

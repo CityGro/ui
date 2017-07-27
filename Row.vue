@@ -1,11 +1,11 @@
 <template>
-  <div class="row">
+  <div class="ui-row row">
     <slot/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'row'
+  name: 'ui-row'
 }
 </script>
