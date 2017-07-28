@@ -1,28 +1,19 @@
 <template>
-  <div class="form-group">
+  <div class="form-group ui-select-dropdown">
     <label v-if="label" class="control-label"> {{ label }} </label>
-    <select
-      class="ui-select-dropdown form-control"
+    <select-control
       :value="value"
-      @input="handleChange($event)">
-      <option
-        v-if="placeholder"
-        :selected="!value"
-        value="">
-        {{placeholder}}
-      </option>
-      <option
-        v-for="option in options"
-        :selected="option.value == value"
-        :value="option.value">
-        {{option.key}}
-      </option>
-    </select>
+      :options="options"
+      :placeholder="placeholder"
+      @input="$emit('input', $event)"
+    />
     <span v-if="errors" v-for="error in errors" class="help-block">{{error}}</span>
   </div>
 </template>
 
 <script>
+import SelectControl from './SelectControl'
+
 export default {
   name: 'ui-select-dropdown',
   props: {
@@ -43,10 +34,8 @@ export default {
       type: String
     }
   },
-  methods: {
-    handleChange (event) {
-      this.$emit('input', event.target.value)
-    }
+  components: {
+    SelectControl
   }
 }
 </script>
