@@ -62,7 +62,6 @@ export default {
       required: true
     },
     activeIf: {
-      type: String,
       required: true
     }
   },
