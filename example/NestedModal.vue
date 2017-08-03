@@ -1,6 +1,6 @@
 <template>
   <div class="modal-content">
-    <div class="modal-body">
+    <div class="modal-body scroll">
       <button class="btn btn-primary btn-block" style="margin-bottom: 50vh;" @click="openB"> Open B </button>
       <dropdown style="margin-bottom: 50vh;">
         <button class="btn btn-primary"> Looke! <i class="fa fa-caret-down" /> </button>
@@ -40,10 +40,12 @@ const ModalB = Vue.component('modal-b', {
                 'fa': true,
                 'fa-caret-down': true
               }
-            })
+            }),
           ]),
           h('h3', {slot: 'content'}, 'Hey there')
-        ])
+        ]),
+        h('h3', null, 'HAI'),
+        h('p', null, 'some nonsense')
       ])
     ])
   }

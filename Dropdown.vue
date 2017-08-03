@@ -40,15 +40,11 @@
   }
 
   .ui-dropdown-content {
-    $indicator: 0; /* 0.66em; */
-
     @include depth;
 
     background-color: $bg2;
     border-radius: 1%;
     padding: 0.75em;
-    margin-right: $indicator / 2;
-    margin-top: $indicator;
     text-align: left;
     max-width: 100%;
     overflow: auto;
@@ -74,7 +70,6 @@ export default {
   data () {
     return {
       visible: false,
-      currentOrientation: this.orientation,
       dropdownStyles: {},
       popper: null
     }
@@ -82,7 +77,7 @@ export default {
   props: {
     orientation: {
       type: String,
-      default: 'auto-end'
+      default: 'bottom'
     },
     align: {
       type: String,
@@ -128,6 +123,15 @@ export default {
     },
     allDropdownStyles () {
       return {...this.dropdownStyle, ...this.dropdownStyles}
+    },
+    placements () {
+      let variation = ''
+      if (this.align === 'right') {
+        variation = '-end'
+      } else if (this.align === 'left') {
+        variation = '-start'
+      }
+      return `${this.orientation}${variation}`
     }
   },
   methods: {
@@ -191,14 +195,14 @@ export default {
   },
   mounted () {
     this.popper = new Popper(this.$refs.dropdownButton, this.$refs.dropdownContent, {
-      placement: this.orientation,
+      placement: this.placements,
       removeOnDestroy: true,
       modifiers: {
-        hide: {
-          enabled: false
-        },
         preventOverflow: {
-          enabled: false
+          enabled: true
+        },
+        flip: {
+          enabled: true
         }
       }
     })
