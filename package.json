@@ -13,14 +13,10 @@
   },
   "homepage": "https://gitlab.com/citygro/ui",
   "babel": {
-    "env": {
-      "test": {
-        "presets": [
-          "es2015",
-          "stage-2"
-        ]
-      }
-    }
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   },
   "dependencies": {
     "@citygro/vue-modal": "^5.2.2",
