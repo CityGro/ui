@@ -48,6 +48,7 @@
     text-align: left;
     max-width: 100%;
     overflow: auto;
+    z-index: $zindex-dropdown;
 
     .ui-dropdown-content-wrapper {
       flex: 1;
