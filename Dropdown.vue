@@ -46,12 +46,11 @@
     border-radius: 1%;
     padding: 0.75em;
     text-align: left;
-    max-width: 100%;
     overflow: auto;
     z-index: $zindex-dropdown;
 
     .ui-dropdown-content-wrapper {
-      flex: 1;
+      width: auto;
     }
   }
 </style>
@@ -207,6 +206,9 @@ export default {
         }
       }
     })
+  },
+  updated () {
+    this.popper.update()
   },
   beforeDestroy () {
     this.$off('close', this.handleClose)

@@ -3,14 +3,30 @@
     <slot/>
     <dropdown :visible="open" :orientation="orientation" :openOnHover="true">
       <span class="toggle">
-        <slot name="toggle"/>
+        <slot name="toggle" />
       </span>
       <span slot="content">
-        <slot name="menu"/>
+        <slot name="menu" />
       </span>
     </dropdown>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  .ui-dropdown {
+    right: 0;
+    color: $text;
+
+    &.ui-top {
+      bottom: 133%;
+    }
+  }
+
+  .btn-group > .toggle > * {
+    width: 2em;
+    padding: 0;
+  }
+</style>
 
 <script>
 import Dropdown from './Dropdown'
@@ -46,21 +62,4 @@ export default {
     this._unsubscribe()
   }
 }
-
 </script>
-
-<style lang="scss" scoped>
-  .ui-dropdown {
-    right: 0;
-    color: $text;
-
-    &.ui-top {
-      bottom: 133%;
-    }
-  }
-
-  .btn-group > .toggle > * {
-    width: 2em;
-    padding: 0;
-  }
-</style>

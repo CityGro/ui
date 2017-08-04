@@ -1,36 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
     <title><%= htmlWebpackPlugin.options.title %></title>
     <style>
-        .modal {
-            background-color: rgba(0, 0, 0, 0.75);
-        }
-        .modal-dialog.modal-tall {
-            height: calc(100vh - 60px);
-        }
-        .modal-dialog.modal-tall .modal-content {
-            height: 100%;
-        }
-        .death .modal-content {
-            background-color: rgba(0, 0, 0, 0);
-        }
-        .death .modal-footer {
-            border-top-color: #850400;
-        }
-        iframe {
-            border-radius: 4px;
-        }
+      .container {
+        background-color: #fff;
+      }
+      .intro {
+        margin-bottom: 1em;
+      }
     </style>
 </head>
 <body class="container">
-    <header class="page-header">
-        <h1>
-            <a href="https://gitlab.com/citygro/ui">
-                <%= htmlWebpackPlugin.options.title %>
-            </a>
-        </h1>
-    </header>
-    <div id="root" class="row"></div>
+  <header class="page-header">
+    <h1>
+      <a href="https://gitlab.com/citygro/ui">
+        <%= htmlWebpackPlugin.options.title %>
+      </a>
+    </h1>
+  </header>
+  <div class="row intro">
+    <div class="col-sm-12">
+      <p>
+        citygro/ui components in action! see <code>example/</code> for
+        source code samples.
+      </p>
+      <p>
+        questions, comments, or bugs? <a href="https://gitlab.com/citygro/ui/issues" target="_blank">talk to us.</a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="root"></div>
+    </div>
+  </div>
 </body>
 </html>

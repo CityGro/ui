@@ -13,7 +13,7 @@
 
 <script>
 import Vue from 'vue'
-import Dropdown from '../Dropdown'
+import Dropdown from '../../Dropdown'
 
 const ModalB = Vue.component('modal-b', {
   render (h) {

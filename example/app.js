@@ -4,28 +4,15 @@ import style from '../style'
 
 Vue.use(VueModal)
 
+import NestedModal from './NestedModal'
+import Menus from './Menus'
+
 new Vue({
-  data () {
-    return {
-      modalLoading: false
-    }
-  },
   render (h) {
     const self = this
     return h('div', null, [
-      h('button', {
-        class: {
-          'btn': true,
-          'btn-primary': true
-        },
-        on: {
-          click: () => {
-            self.$openModal({
-              content: (resolve) => require(['./NestedModal'], resolve)
-            })
-          }
-        }
-      }, 'Open Modal'),
+      h(NestedModal),
+      h(Menus),
       h('modal-view', {
         on: {
           progress: (loading) => {
