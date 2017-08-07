@@ -200,8 +200,12 @@
       }
     }
 
-    .modal-body.scroll {
+    .modal-body {
       overflow-y: scroll;
+
+      &.no-scroll {
+        overflow-y: initial;
+      }
     }
 
     .modal-footer {

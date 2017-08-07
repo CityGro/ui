@@ -1,6 +1,6 @@
 <template>
   <div class="modal-content">
-    <div class="modal-body scroll">
+    <div class="modal-body no-scroll">
       <button class="btn btn-primary btn-block" style="margin-bottom: 50vh;" @click="openB"> Open B </button>
       <dropdown style="margin-bottom: 50vh;">
         <button class="btn btn-primary"> Looke! <i class="fa fa-caret-down" /> </button>
