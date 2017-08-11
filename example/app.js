@@ -6,6 +6,7 @@ Vue.use(VueModal)
 
 import NestedModal from './NestedModal'
 import Menus from './Menus'
+import Inputs from './Inputs'
 
 new Vue({
   render (h) {
@@ -13,6 +14,7 @@ new Vue({
     return h('div', null, [
       h(NestedModal),
       h(Menus),
+      h(Inputs),
       h('modal-view', {
         on: {
           progress: (loading) => {

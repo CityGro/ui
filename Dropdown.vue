@@ -67,6 +67,7 @@ import Popper from 'popper.js'
  * @param {Boolean} [openOnHover=true] - open on hover
  */
 export default {
+  name: 'ui-dropdown',
   data () {
     return {
       visible: false,

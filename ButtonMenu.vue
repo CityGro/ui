@@ -1,7 +1,7 @@
 <template>
-  <div class="btn-group">
+  <div class="btn-group ui-button-menu">
     <slot/>
-    <dropdown :visible="open" :orientation="orientation" :openOnHover="true">
+    <dropdown :visible="open" :orientation="orientation" :open-on-hover="true" :close-on-click="closeOnClick">
       <span class="toggle">
         <slot name="toggle" />
       </span>
@@ -33,11 +33,16 @@ import Dropdown from './Dropdown'
 import $ from 'jquery'
 
 export default {
+  name: 'ui-button-menu',
   components: {Dropdown},
   props: {
     orientation: {
       type: String,
       default: 'bottom'
+    },
+    closeOnClick: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
