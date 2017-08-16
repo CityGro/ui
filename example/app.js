@@ -4,17 +4,19 @@ import style from '../style'
 
 Vue.use(VueModal)
 
-import NestedModal from './NestedModal'
-import Menus from './Menus'
+import Cards from './Cards'
 import Inputs from './Inputs'
+import Menus from './Menus'
+import NestedModal from './NestedModal'
 
 new Vue({
   render (h) {
     const self = this
     return h('div', null, [
-      h(NestedModal),
-      h(Menus),
+      h(Cards),
       h(Inputs),
+      h(Menus),
+      h(NestedModal),
       h('modal-view', {
         on: {
           progress: (loading) => {

@@ -1,12 +1,16 @@
 <template>
   <div class="card">
-    <slot/>
+    <header class="title">
+      <slot name="title" />
+    </header>
+    <div class="content">
+      <slot />
+    </div>
+    <div class="action">
+      <slot name="action" />
+    </div>
   </div>
 </template>
-
-<script>
-export default { }
-</script>
 
 <style lang="scss" scoped>
   .card {
@@ -21,5 +25,36 @@ export default { }
     margin: 0.5em;
     border: 1px solid $bg;
     border-radius: 2.5%;
+    cursor: pointer;
+
+    .title {
+      font-size: 18px;
+      line-height: 22px;
+
+      & > h1,
+      & > h2,
+      & > h3,
+      & > h4,
+      & > h5,
+      & > h6 {
+        margin-top: 0;
+      }
+    }
+
+    .content {
+      font-size: small;
+      margin-bottom: 10px;
+    }
+
+    .action {
+      text-align: center;
+      margin-top: auto;
+    }
   }
 </style>
+
+<script>
+export default {
+  name: 'ui-card'
+}
+</script>
