@@ -3,7 +3,8 @@ import Column from './Column'
 import Vue from 'vue'
 import clone from 'lodash/clone'
 import range from 'lodash/range'
-import toInteger from 'lodash/toInteger'
+import sum from 'lodash/sum'
+import round from 'lodash/round'
 
 export default Vue.component('resizable', {
   props: {
@@ -20,6 +21,9 @@ export default Vue.component('resizable', {
   computed: {
     cols () {
       return this.value
+    },
+    total () {
+      return sum(range(1, this.columns + 1).map(this.getColSize))
     }
   },
   methods: {
@@ -35,14 +39,29 @@ export default Vue.component('resizable', {
     },
     widthStyle (i) {
       const n = this.getColSize(i)
-      return `calc(${n}% - 5px)`
+      return `calc(${n}%)`
     },
     steal (i, diff) {
       let w = this.getColSize(i + 1) - diff
       if (w < 1) {
         w = 1
       }
-      return w
+      return this.sanityCheck(w)
+    },
+    fixOverflow () {
+      const overflow = this.total - 100
+      const trim = Math.abs(round(overflow / this.columns))
+      let cols = {}
+      range(1, this.columns + 1).forEach((i) => {
+        cols[`col${i}`] = this.cols[`col${i}`] - trim
+      })
+      this.$emit('input', cols)
+    },
+    sanityCheck (n) {
+      if (this.total > 100) {
+        this.$nextTick(() => this.fixOverflow())
+      }
+      return (n > 100) ? n - 1 : n
     }
   },
   render (h) {
@@ -60,12 +79,13 @@ export default Vue.component('resizable', {
             const parentWidth = $(self.$el).width()
             const width = self.getColSize(i)
             const width2Px = (parentWidth * (width / 100)) + offset
-            const width2 = toInteger((width2Px / parentWidth) * 100)
+            const width2 = round((width2Px / parentWidth) * 100)
             const diff = width2 - width
-            let cols = clone(self.cols)
-            cols[`col${i}`] = width2
-            cols[`col${i + 1}`] = self.steal(i, diff)
-            self.$emit('input', cols)
+            self.$emit('input', {
+              ...self.cols,
+              [`col${i}`]: self.sanityCheck(width2),
+              [`col${i + 1}`]: self.steal(i, diff)
+            })
           }
         }
       }, self.$slots[`col${i}`])

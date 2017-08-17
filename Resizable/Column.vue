@@ -11,8 +11,6 @@
 
 <style lang="scss" scoped>
   .resizable-column {
-    padding-right: $font-size-base;
-    padding-left: $font-size-base;
     position: relative;
     height: 100%;
     display: inline-block;
@@ -23,17 +21,18 @@
     }
 
     .handle {
+      $size: $font-size-base / 2;
       align-items: center;
       cursor: col-resize;
       display: flex;
       flex-direction: column;
-      font-size: $font-size-base / 2;
+      font-size: $size;
       height: 100%;
       justify-content: center;
       position: absolute;
-      right: 0;
+      right: -($size / 2);
       top: 0;
-      width: $font-size-base / 2;
+      width: $size;
     }
   }
 </style>

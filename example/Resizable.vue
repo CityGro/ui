@@ -4,10 +4,10 @@
       Resizable
     </section-header>
     <resizable v-model="cols">
-      <div class="foo" slot="col1">
+      <div class="a-col" slot="col1">
         Resize Me
       </div>
-      <div slot="col2">
+      <div class="a-col" slot="col2">
         Resize Me
       </div>
     </resizable>
@@ -19,9 +19,13 @@
     margin-top: 1em;
   }
 
-  .foo {
+  .ui-resizable {
+    border: 1px solid $brand-primary;
+  }
+
+  .a-col {
     height: 128px;
-    border: 1px solid $text-color;
+    border: 1px solid $brand-success;
     padding: $padding-base-vertical $padding-base-horizontal;
   }
 </style>
