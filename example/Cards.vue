@@ -4,7 +4,7 @@
       Cards
     </section-header>
     <div class="cards">
-      <card v-for="card in cards">
+      <card v-for="card in cards" :key="card.title">
         <h2 slot="title"> {{ card.title }} </h2>
         <p> {{ card.description }} </p>
         <a slot="action" class="btn" :class="{'btn-primary': !yes, 'btn-success': yes}" @click="yes = !yes">

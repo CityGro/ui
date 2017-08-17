@@ -8,6 +8,7 @@ import Cards from './Cards'
 import Inputs from './Inputs'
 import Menus from './Menus'
 import NestedModal from './NestedModal'
+import Resizable from './Resizable'
 
 new Vue({
   render (h) {
@@ -17,6 +18,7 @@ new Vue({
       h(Inputs),
       h(Menus),
       h(NestedModal),
+      h(Resizable),
       h('modal-view', {
         on: {
           progress: (loading) => {
