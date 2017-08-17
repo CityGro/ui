@@ -4,7 +4,7 @@
       Resizable
     </section-header>
     <resizable v-model="cols">
-      <div slot="col1">
+      <div class="foo" slot="col1">
         Resize Me
       </div>
       <div slot="col2">
@@ -17,6 +17,12 @@
 <style lang="scss" scoped>
   .resizable-example {
     margin-top: 1em;
+  }
+
+  .foo {
+    height: 128px;
+    border: 1px solid $text-color;
+    padding: $padding-base-vertical $padding-base-horizontal;
   }
 </style>
 

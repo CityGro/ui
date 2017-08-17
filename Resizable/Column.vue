@@ -29,6 +29,7 @@
       flex-direction: column;
       font-size: $font-size-base / 2;
       height: 100%;
+      justify-content: center;
       position: absolute;
       right: 0;
       top: 0;
