@@ -1,20 +1,25 @@
 import $ from 'jquery'
 import Column from './Column'
 import Vue from 'vue'
-import close from 'lodash/clone'
+import clone from 'lodash/clone'
 import range from 'lodash/range'
 import toInteger from 'lodash/toInteger'
 
 export default Vue.component('resizable', {
-  data () {
-    return {
-      cols: {}
-    }
-  },
   props: {
+    value: {
+      type: Object,
+      required: true,
+      default: () => ({})
+    },
     columns: {
       type: Number,
       default: 2
+    }
+  },
+  computed: {
+    cols () {
+      return this.value
     }
   },
   methods: {
@@ -57,9 +62,10 @@ export default Vue.component('resizable', {
             const width2Px = (parentWidth * (width / 100)) + offset
             const width2 = toInteger((width2Px / parentWidth) * 100)
             const diff = width2 - width
-            self.cols[`col${i}`] = width2
-            self.cols[`col${i + 1}`] = self.steal(i, diff)
-            self.$forceUpdate()
+            let cols = clone(self.cols)
+            cols[`col${i}`] = width2
+            cols[`col${i + 1}`] = self.steal(i, diff)
+            self.$emit('input', cols)
           }
         }
       }, self.$slots[`col${i}`])

@@ -3,7 +3,7 @@
     <section-header :level="1">
       Resizable
     </section-header>
-    <resizable>
+    <resizable v-model="cols">
       <div slot="col1">
         Resize Me
       </div>
@@ -28,6 +28,11 @@ export default {
   components: {
     SectionHeader,
     Resizable
+  },
+  data () {
+    return {
+      cols: {}
+    }
   }
 }
 </script>
