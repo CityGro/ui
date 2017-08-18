@@ -18,6 +18,11 @@ export default Vue.component('resizable', {
       default: 2
     }
   },
+  data () {
+    return {
+      dragging: false
+    }
+  },
   computed: {
     cols () {
       return this.value
@@ -61,7 +66,13 @@ export default Vue.component('resizable', {
       if (this.total > 100) {
         this.$nextTick(() => this.fixOverflow())
       }
-      return (n > 100) ? n - 1 : n
+      if (n > 100) {
+        return n - 1
+      } else if (n < 1) {
+        return n + 1
+      } else {
+        return n
+      }
     }
   },
   render (h) {
@@ -72,9 +83,13 @@ export default Vue.component('resizable', {
       return h(Column, {
         props: {
           width: self.widthStyle(i),
-          last: self.isLast(i)
+          last: self.isLast(i),
+          dragging: self.dragging
         },
         on: {
+          dragging (e) {
+            self.dragging = e
+          },
           input (offset) {
             const parentWidth = $(self.$el).width()
             const width = self.getColSize(i)

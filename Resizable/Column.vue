@@ -3,7 +3,8 @@
     <div class="content">
       <slot />
     </div>
-    <div class="handle" v-if="!last" draggable @drag="handleResize">
+    <div v-if="dragging" class="col-overlay"></div>
+    <div class="handle" v-if="!last" draggable @drag="handleResize" @dragend="handleEnd">
       <icon name="bars" />
     </div>
   </div>
@@ -14,6 +15,16 @@
     position: relative;
     height: 100%;
     display: inline-block;
+
+    .col-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
 
     .content {
       width: 100%;
@@ -52,6 +63,10 @@ export default {
     last: {
       type: Boolean,
       default: false
+    },
+    dragging: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
@@ -67,8 +82,14 @@ export default {
   methods: {
     handleResize (e) {
       if (e.x !== 0) {
+        if (this.dragging === false) {
+          this.$emit('dragging', true)
+        }
         this.$emit('input', e.offsetX)
       }
+    },
+    handleEnd () {
+      this.$emit('dragging', false)
     }
   }
 }

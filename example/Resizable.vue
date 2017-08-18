@@ -8,7 +8,7 @@
         Resize Me
       </div>
       <div class="a-col" slot="col2">
-        Resize Me
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UJsUpeXK6Jo" frameborder="0" allowfullscreen></iframe>
       </div>
     </resizable>
   </div>
@@ -24,7 +24,6 @@
   }
 
   .a-col {
-    height: 128px;
     border: 1px solid $brand-success;
     padding: $padding-base-vertical $padding-base-horizontal;
   }
@@ -41,7 +40,10 @@ export default {
   },
   data () {
     return {
-      cols: {}
+      cols: {
+        col1: 25,
+        col2: 75
+      }
     }
   }
 }
