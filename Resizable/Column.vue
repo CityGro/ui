@@ -4,7 +4,7 @@
       <slot />
     </div>
     <div v-if="dragging" class="col-overlay"></div>
-    <div class="handle" v-if="!last" draggable @drag="handleResize" @dragend="handleEnd">
+    <div class="handle" v-if="!last" @mousedown="startResize">
       <icon name="bars" />
     </div>
   </div>
@@ -12,23 +12,24 @@
 
 <style lang="scss" scoped>
   .resizable-column {
-    position: relative;
-    height: 100%;
     display: inline-block;
+    height: 100%;
+    position: relative;
 
     .col-overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      right: 0;
       bottom: 0;
+      cursor: col-resize;
+      height: 100%;
       left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
     }
 
     .content {
-      width: 100%;
       height: 100%;
+      width: 100%;
     }
 
     .handle {
@@ -49,6 +50,7 @@
 </style>
 
 <script>
+import $ from 'jquery'
 import Icon from '../Icon'
 import isNumber from 'lodash/isNumber'
 
@@ -72,6 +74,11 @@ export default {
   components: {
     Icon
   },
+  data () {
+    return {
+      startX: null
+    }
+  },
   computed: {
     style () {
       return {
@@ -80,15 +87,28 @@ export default {
     }
   },
   methods: {
-    handleResize (e) {
-      if (e.x !== 0) {
-        if (this.dragging === false) {
-          this.$emit('dragging', true)
-        }
-        this.$emit('input', e.offsetX)
-      }
+    startResize (e) {
+      this.$emit('dragging', true)
+      this.startX = e.pageX
+      $(window).on('mousemove', this.handleDrag)
+      $(window).on('mouseup', this.endDrag)
     },
-    handleEnd () {
+    handleDrag (e) {
+      const pageX = e.pageX
+      let offset = pageX - this.startX
+      if (offset > 2 || offset < -2) {
+        this.startX = pageX
+      }
+      if (offset > 10) {
+        offset = 10
+      } else if (offset < -10) {
+        offset = -10
+      }
+      this.$emit('input', offset)
+    },
+    endDrag (e) {
+      $(window).off('mousemove', this.handleDrag)
+      $(window).off('mouseup', this.endDrag)
       this.$emit('dragging', false)
     }
   }
