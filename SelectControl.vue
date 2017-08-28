@@ -30,7 +30,8 @@ export default {
       required: true
     },
     placeholder: {
-      type: String
+      type: String,
+      default: 'Select'
     }
   },
   methods: {

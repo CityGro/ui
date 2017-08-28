@@ -1,16 +1,30 @@
 <template>
   <input
-    class="form-control"
-    type="text"
     :value="value"
     @input="$emit('input', $event.target.value)"
-    :placeholder="placeholder || ''"
+    :class="{disabled}"
+    :disabled="disabled"
+    :placeholder="placeholder"
+    class="form-control"
+    type="text"
   />
 </template>
 
 <script>
 export default {
-  props: ['value', 'placeholder']
+  props: {
+    value: {
+      type: String
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
