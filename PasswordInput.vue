@@ -5,8 +5,8 @@
     :class="{disabled}"
     :disabled="disabled"
     :placeholder="placeholder"
-    class="form-control ui-text-input"
-    type="text"
+    class="form-control ui-password-input"
+    type="password"
   />
 </template>
 
@@ -18,10 +18,10 @@
 
 <script>
 export default {
-  name: 'ui-text-input',
+  name: 'ui-password-input',
   props: {
     value: {
-      type: [String, Number]
+      type: String
     },
     placeholder: {
       type: String,
