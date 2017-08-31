@@ -45,6 +45,7 @@
       right: -($size / 2);
       top: 0;
       width: $size;
+      z-index: $zindex-modal;
     }
   }
 </style>
