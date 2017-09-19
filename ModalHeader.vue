@@ -13,6 +13,9 @@
 <script>
 import Icon from './Icon'
 
+/**
+ * @fires ModalHeader#close
+ */
 export default {
   name: 'ui-modal-header',
   components: {
