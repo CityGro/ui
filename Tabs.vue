@@ -4,6 +4,12 @@
   </ul>
 </template>
 
+<style lang="scss">
+  .modal-header .ui-tabs {
+    margin-bottom: -16px;
+  }
+</style>
+
 <style lang="scss" scoped>
   ul.ui-tabs {
     display: flex;
