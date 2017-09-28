@@ -13,13 +13,17 @@ export default {
     spin: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String
     }
   },
   computed: {
     iconClass () {
       return {
         'fa-spin': this.spin,
-        [`fa-${this.name}`]: true
+        [`fa-${this.name}`]: true,
+        [`fa-${this.size}`]: Boolean(this.size)
       }
     }
   }
