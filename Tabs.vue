@@ -19,7 +19,7 @@
     padding-bottom: 1px;
 
     @media (max-width: $screen-md-max) {
-      width: 100%;
+      flex: 1;
       overflow-y: hidden;
       overflow-x: scroll;
       min-height: min-content;
