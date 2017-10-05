@@ -107,6 +107,10 @@ export default {
     dropdownStyle: {
       type: Object,
       default: () => ({})
+    },
+    stopClick: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
@@ -182,9 +186,12 @@ export default {
       $(document).off('click', this.closeFn)
       $(this.$el).parents().off('click', this.closeFn)
     },
-    handleMenuClick () {
+    handleMenuClick (event) {
       if (this.closeOnClick) {
         this.handleClose()
+      }
+      if (!this.stopClick) {
+        this.$emit('click', event)
       }
     }
   },

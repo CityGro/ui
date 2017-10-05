@@ -1,7 +1,7 @@
 <template>
   <div class="btn-group ui-button-menu">
     <slot/>
-    <dropdown :visible="open" :orientation="orientation" :open-on-hover="true" :close-on-click="closeOnClick">
+    <dropdown :visible="open" :orientation="orientation" :open-on-hover="true" :close-on-click="closeOnClick" :stop-click="stopClick">
       <span class="toggle">
         <slot name="toggle" />
       </span>
@@ -41,6 +41,10 @@ export default {
       default: 'bottom'
     },
     closeOnClick: {
+      type: Boolean,
+      default: true
+    },
+    stopClick: {
       type: Boolean,
       default: true
     }
