@@ -15,7 +15,7 @@
       :class="type"
       :style="allDropdownStyles"
       @mouseover="cancelTimeout"
-      @click.stop="handleMenuClick">
+      @click="handleMenuClick">
       <div class="ui-dropdown-content-wrapper">
         <slot name="content" />
       </div>
@@ -187,11 +187,11 @@ export default {
       $(this.$el).parents().off('click', this.closeFn)
     },
     handleMenuClick (event) {
+      if (this.stopClick) {
+        event.stopPropagation()
+      }
       if (this.closeOnClick) {
         this.handleClose()
-      }
-      if (!this.stopClick) {
-        this.$emit('click', event)
       }
     }
   },
