@@ -3,15 +3,25 @@
     <section-header :level="1">
       Cards
     </section-header>
-    <div class="cards">
+    <draggable v-model="cards" class="cards">
       <card v-for="card in cards" :key="card.title">
         <h2 slot="title"> {{ card.title }} </h2>
         <p> {{ card.description }} </p>
-        <a slot="action" class="btn" :class="{'btn-primary': !yes, 'btn-success': yes}" @click="yes = !yes">
-          {{ card.action }}
-        </a>
+        <button-menu slot="action">
+          <a class="btn" :class="{'btn-primary': !yes, 'btn-success': yes}" @click="yes = !yes">
+            {{ card.action }}
+          </a>
+          <div slot="menu">
+            <a class="btn btn-block" :class="{'btn-primary': !yes, 'btn-success': yes}" @click="yes = !yes">
+              {{ card.action }}
+            </a>
+            <a class="btn btn-block" :class="{'btn-primary': !yes, 'btn-success': yes}" @click="yes = !yes">
+              {{ card.action }}
+            </a>
+          </div>
+        </button-menu>
       </card>
-    </div>
+    </draggable>
   </div>
 </template>
 
@@ -27,13 +37,17 @@
 </style>
 
 <script>
-import SectionHeader from '../SectionHeader'
+import ButtonMenu from '../ButtonMenu'
 import Card from '../Card'
+import Draggable from '../Draggable'
+import SectionHeader from '../SectionHeader'
 
 export default {
   components: {
-    SectionHeader,
-    Card
+    ButtonMenu,
+    Card,
+    Draggable,
+    SectionHeader
   },
   data () {
     return {

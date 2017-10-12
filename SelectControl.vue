@@ -31,7 +31,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'Select'
+      default: '(Please select one)'
     }
   },
   methods: {

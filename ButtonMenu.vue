@@ -3,7 +3,11 @@
     <slot/>
     <dropdown :visible="open" :orientation="orientation" :open-on-hover="true" :close-on-click="closeOnClick" :stop-click="stopClick">
       <span class="toggle">
-        <slot name="toggle" />
+        <slot name="toggle">
+          <a class="btn btn-default">
+            <icon name="caret-down" />
+          </a>
+        </slot>
       </span>
       <span slot="content">
         <slot name="menu" />
@@ -29,12 +33,16 @@
 </style>
 
 <script>
-import Dropdown from './Dropdown'
 import $ from 'jquery'
+import Dropdown from './Dropdown'
+import Icon from './Icon'
 
 export default {
   name: 'ui-button-menu',
-  components: {Dropdown},
+  components: {
+    Dropdown,
+    Icon
+  },
   props: {
     orientation: {
       type: String,
