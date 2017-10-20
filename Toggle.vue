@@ -13,23 +13,24 @@
 
 <style lang="scss" scoped>
   .ui-switch {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
     height: $input-height-base;
 
     label {
       height: 100%;
-      margin: 0;
       line-height: $input-height-base;
+      margin: 0;
     }
 
     .state {
-      display: inline-block;
+      background-position: 50% 50%;
       background-repeat: no-repeat;
-      background-size: cover;
-      margin-right: $padding-base-horizontal / 2;
+      background-size: 160%;
+      display: inline-block;
       height: 100%;
+      margin-right: $padding-base-horizontal / 2;
       width: $input-height-base;
 
       &.on {
