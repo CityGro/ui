@@ -13,8 +13,8 @@
 import Vue from 'vue'
 
 const SectionTitle = Vue.component('section-title', {
-  render (createElement) {
-    return createElement(`h${this.level}`, this.$slots.default)
+  render (h) {
+    return h(`h${this.level}`, {class: {'ui-pretty-overflow': true}}, this.$slots.default)
   },
   props: {
     level: {

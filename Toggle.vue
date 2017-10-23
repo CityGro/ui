@@ -5,7 +5,7 @@
         this switch is {{ state }}
       </span>
     </div>
-    <label>
+    <label class="ui-pretty-overflow">
       <slot />
     </label>
   </div>

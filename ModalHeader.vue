@@ -1,9 +1,9 @@
 <template>
   <div class="ui-modal-header modal-header">
-    <a class="close" @click="$emit('close')">
+    <a class="close" @click="$emit('close') && $emit('dismiss')">
       <icon name="times" />
     </a>
-    <h3 class="modal-title">
+    <h3 class="modal-title ui-pretty-overflow">
       <slot />
     </h3>
     <slot name="extra" />
