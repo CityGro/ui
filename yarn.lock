@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@citygro/vue-modal@^5.2.2":
-  version "5.2.4"
-  resolved "https://registry.yarnpkg.com/@citygro/vue-modal/-/vue-modal-5.2.4.tgz#a97c817c266b40005605874380ba8d21acbb1fed"
+"@citygro/vue-modal@5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@citygro/vue-modal/-/vue-modal-5.2.5.tgz#18458c0feb9e8f5ff8dd9543486e3a2046778cb3"
   dependencies:
     jquery "^3.1.1"
     lodash "^4.17.2"

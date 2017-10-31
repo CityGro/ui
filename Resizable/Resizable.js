@@ -1,10 +1,9 @@
 import $ from 'jquery'
 import Column from './Column'
 import Vue from 'vue'
-import clone from 'lodash/clone'
 import range from 'lodash/range'
-import sum from 'lodash/sum'
 import round from 'lodash/round'
+import sum from 'lodash/sum'
 
 export default Vue.component('resizable', {
   props: {

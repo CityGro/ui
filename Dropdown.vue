@@ -57,7 +57,6 @@
 
 <script>
 import $ from 'jquery'
-import toNumber from 'lodash/toNumber'
 import Popper from 'popper.js'
 
 /**

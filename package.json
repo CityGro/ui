@@ -19,7 +19,7 @@
     ]
   },
   "dependencies": {
-    "@citygro/vue-modal": "^5.2.2",
+    "@citygro/vue-modal": "5.2.5",
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
@@ -30,8 +30,6 @@
     "vuedraggable": "^2.14.1"
   },
   "devDependencies": {
-    "cross-env": "^5.0.3",
-    "webpack-dev-server": "^2.6.1",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
@@ -46,6 +44,7 @@
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.3",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^6.2.1",
@@ -84,6 +83,7 @@
     "webpack": "^2.3.3",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
+    "webpack-dev-server": "^2.6.1",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0"
   },
