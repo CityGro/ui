@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: row;
     height: $input-height-base;
+    overflow: hidden;
 
     label {
       height: 100%;
