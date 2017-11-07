@@ -224,5 +224,4 @@ export default {
     this.popper.destroy()
   }
 }
-
 </script>
