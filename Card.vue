@@ -1,5 +1,6 @@
 <template>
-  <div class="card">
+  <!-- TODO deprecate unprefixed class names -->
+  <div class="ui-card card">
     <header class="title">
       <slot name="title" />
     </header>
@@ -44,6 +45,8 @@
     .content {
       font-size: small;
       margin-bottom: 10px;
+      height: 66%;
+      overflow-y: scroll;
     }
 
     .action {

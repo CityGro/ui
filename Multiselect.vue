@@ -42,49 +42,6 @@
   />
 </template>
 
-<script>
-import Multiselect from 'vue-multiselect'
-
-export default {
-  name: 'ui-multiselect',
-  components: {Multiselect},
-  props: {
-    id: {type: [Number, String]},
-    options: {type: Array},
-    value: {type: [Number, Array, String, Object]},
-    multiple: {type: Boolean, default: false},
-    trackBy: {type: String},
-    label: {type: String},
-    searchable: {type: Boolean, default: false},
-    clearOnSelect: {type: Boolean, default: true},
-    hideSelected: {type: Boolean, default: false},
-    placeholder: {type: String, default: 'Select option'},
-    allowEmpty: {type: Boolean, default: true},
-    resetAfter: {type: Boolean, default: false},
-    closeOnSelect: {type: Boolean, default: true},
-    customLabel: {type: Function},
-    taggable: {type: Boolean, default: false},
-    tagPlaceholder: {type: String, default: 'Press enter to create a tag'},
-    max: {type: Number},
-    optionsLimit: {type: Number, default: 1000},
-    groupValues: {type: String},
-    groupLabel: {type: String},
-    blockKeys: {type: Array, default: () => ([])},
-    internalSearch: {type: Boolean, default: true},
-    selectLabel: {type: String, default: 'Press enter to select'},
-    selectedLabel: {type: String, default: 'Selected'},
-    deselectLabel: {type: String, default: 'Press enter to remove'},
-    showLabels: {type: Boolean, default: true},
-    limit: {type: Number, default: 99999},
-    limitText: {type: Function, default: () => (count) => `and ${count} more`},
-    loading: {type: Boolean, default: false},
-    disabled: {type: Boolean, default: false},
-    maxHeight: {type: Number, default: 300},
-    showPointer: {type: Boolean, default: true}
-  }
-}
-</script>
-
 <style lang="scss">
   @mixin depth {
     box-shadow: 1px 1px 5px rgba(#000, 0.33);
@@ -219,3 +176,46 @@ export default {
     }
   }
 </style>
+
+<script>
+import Multiselect from 'vue-multiselect'
+
+export default {
+  name: 'ui-multiselect',
+  components: {Multiselect},
+  props: {
+    id: {type: [Number, String]},
+    options: {type: Array},
+    value: {type: [Number, Array, String, Object]},
+    multiple: {type: Boolean, default: false},
+    trackBy: {type: String},
+    label: {type: String},
+    searchable: {type: Boolean, default: false},
+    clearOnSelect: {type: Boolean, default: true},
+    hideSelected: {type: Boolean, default: false},
+    placeholder: {type: String, default: 'Select option'},
+    allowEmpty: {type: Boolean, default: true},
+    resetAfter: {type: Boolean, default: false},
+    closeOnSelect: {type: Boolean, default: true},
+    customLabel: {type: Function},
+    taggable: {type: Boolean, default: false},
+    tagPlaceholder: {type: String, default: 'Press enter to create a tag'},
+    max: {type: Number},
+    optionsLimit: {type: Number, default: 1000},
+    groupValues: {type: String},
+    groupLabel: {type: String},
+    blockKeys: {type: Array, default: () => ([])},
+    internalSearch: {type: Boolean, default: true},
+    selectLabel: {type: String, default: 'Press enter to select'},
+    selectedLabel: {type: String, default: 'Selected'},
+    deselectLabel: {type: String, default: 'Press enter to remove'},
+    showLabels: {type: Boolean, default: true},
+    limit: {type: Number, default: 99999},
+    limitText: {type: Function, default: () => (count) => `and ${count} more`},
+    loading: {type: Boolean, default: false},
+    disabled: {type: Boolean, default: false},
+    maxHeight: {type: Number, default: 300},
+    showPointer: {type: Boolean, default: true}
+  }
+}
+</script>
