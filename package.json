@@ -14,8 +14,23 @@
   "homepage": "https://gitlab.com/citygro/ui",
   "babel": {
     "presets": [
-      "es2015",
-      "stage-2"
+      ["env",
+       {
+         "useBuiltIns": true,
+         "targets": {
+           "browsers": [
+             ">5% in US",
+             "Firefox ESR",
+             "last 2 versions"
+           ]
+         },
+         "include": [
+           "transform-es2015-spread"
+         ]
+       }]
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
     ]
   },
   "dependencies": {
@@ -35,12 +50,10 @@
     "babel-eslint": "^7.1.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
     "babel-loader": "^6.2.10",
+    "babel-plugin-object-rest-spread": "^0.0.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-runtime": "^6.22.0",
     "babel-plugin-transform-vue-jsx": "^3.5.0",
-    "babel-preset-env": "^1.3.2",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
@@ -92,7 +105,7 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "> 1%",
+    "> 5% in US",
     "firefox esr",
     "last 2 versions"
   ]

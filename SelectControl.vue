@@ -10,7 +10,8 @@
       {{placeholder}}
     </option>
     <option
-      v-for="option in options"
+      v-for="option in getOptions()"
+      :key="option.value"
       :selected="option.value == value"
       :value="option.value">
       {{option.key}}
@@ -19,6 +20,8 @@
 </template>
 
 <script>
+import get from 'lodash/get'
+
 export default {
   name: 'ui-select-control',
   props: {
@@ -35,6 +38,15 @@ export default {
     }
   },
   methods: {
+    getOptions () {
+      return this.options.map((option) => {
+        if (get(option, 'key')) {
+          return option
+        } else {
+          return {key: option, value: option}
+        }
+      })
+    },
     handleChange (event) {
       this.$emit('input', event.target.value)
     }

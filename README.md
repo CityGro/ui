@@ -62,9 +62,9 @@ this method creates a custom build that can be configured by using a custom
 `_variables.scss` file.
 
 ```
-config.sassResources = {
+config.sassResources = [
   resolve('node_modules/@citygro/ui/style/_variables.scss')
-}
+]
 ```
 
 ```
@@ -76,9 +76,9 @@ import style from '@citygro/ui/style'
 this method is quite a bit faster, but cannot produce a custom look.
 
 ```
-config.sassResources = {
+config.sassResources = [
   resolve('node_modules/@citygro/ui/style/_variables.scss')
-}
+]
 ```
 
 ```
