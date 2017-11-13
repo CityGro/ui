@@ -100,7 +100,7 @@
     .multiselect__select {
       height: 36px;
       width: 32px;
-      background-image: url(~assets/images/dropdown-arrow.png);
+      background-image: url(assets/images/dropdown-arrow.png);
       top: 0;
       transition: none;
       border-left: 1px solid $gray-lighter;

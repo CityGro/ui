@@ -50,7 +50,7 @@
     vertical-align: middle;
     cursor: pointer;
     /* Image of checkbox. Placed in as a background image. */
-    background-image: url(~assets/images/checkbox.png);
+    background-image: url(assets/images/checkbox.png);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -60,10 +60,10 @@
   }
   /* Changes position of background image to make checkmark visible */
     input[type="checkbox"]:checked + span {
-      background-image: url(~assets/images/checkbox-checked.png)
+      background-image: url(assets/images/checkbox-checked.png)
     }
   .checkbox.active {
-    background-image: url(~assets/images/checkbox-active.png)
+    background-image: url(assets/images/checkbox-active.png)
   }
   .checkbox-md,
   .checkbox.checkbox-md {
@@ -92,10 +92,10 @@
 
   /* second checkbox image style */
     .outline-checkbox input[type="checkbox"] + span  {
-      background-image: url(~assets/images/checkbox-outline.png);
+      background-image: url(assets/images/checkbox-outline.png);
     }
   .outline-checkbox input[type="checkbox"]:checked + span  {
-    background-image: url(~assets/images/checkbox-outline-checked.png);
+    background-image: url(assets/images/checkbox-outline-checked.png);
   }
 
 </style>
