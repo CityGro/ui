@@ -4,7 +4,7 @@
     :value="value"
     @input="handleChange($event)">
     <option
-      v-if="placeholder"
+      v-if="showPlaceholder()"
       :selected="!value"
       value="">
       {{placeholder}}
@@ -21,6 +21,7 @@
 
 <script>
 import get from 'lodash/get'
+import isString from 'lodash/isString'
 
 export default {
   name: 'ui-select-control',
@@ -33,11 +34,15 @@ export default {
       required: true
     },
     placeholder: {
-      type: String,
+      type: [String, Boolean],
       default: '(Please select one)'
     }
   },
   methods: {
+    showPlaceholder () {
+      console.log(this.placeholder)
+      return isString(this.placeholder)
+    },
     getOptions () {
       return this.options.map((option) => {
         if (get(option, 'key')) {

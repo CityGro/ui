@@ -31,7 +31,8 @@ export default {
       default: null
     },
     placeholder: {
-      type: String
+      type: [String, Boolean],
+      default: '(Please select one)'
     }
   },
   components: {
