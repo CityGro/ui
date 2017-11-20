@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     showPlaceholder () {
-      console.log(this.placeholder)
       return isString(this.placeholder)
     },
     getOptions () {
