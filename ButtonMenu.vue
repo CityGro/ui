@@ -1,7 +1,13 @@
 <template>
-  <div class="btn-group ui-button-menu">
+  <div class="btn-group ui-button-menu" :class="{'btn-group': group}">
     <slot/>
-    <dropdown :visible="open" :orientation="orientation" :open-on-hover="true" :close-on-click="closeOnClick" :stop-click="stopClick">
+    <dropdown
+      :align="align"
+      :close-on-click="closeOnClick"
+      :open-on-hover="true"
+      :orientation="orientation"
+      :stop-click="stopClick"
+      :visible="open">
       <span class="toggle">
         <slot name="toggle">
           <a class="btn btn-default">
@@ -47,6 +53,14 @@ export default {
     orientation: {
       type: String,
       default: 'bottom'
+    },
+    align: {
+      type: String,
+      default: 'left'
+    },
+    group: {
+      type: Boolean,
+      default: true
     },
     closeOnClick: {
       type: Boolean,
