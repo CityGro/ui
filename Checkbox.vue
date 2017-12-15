@@ -6,7 +6,7 @@
       :checked="isChecked"
       :disabled="disabled"
     />
-    <span :style="spanStyle" @click.prevent="onClick">
+    <span :style="spanStyle">
       <label>
         <slot/>
       </label>
