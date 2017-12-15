@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-group ui-button-menu" :class="{'btn-group': group}">
+  <div class="ui-button-menu" :class="{'btn-group': group}">
     <slot/>
     <dropdown
       :align="align"
