@@ -10,8 +10,8 @@ select.form-control,
 select {
   display: block;
   width: 100%;
-  height: 36px;
-  padding: $padding-base-vertical 36px $padding-base-vertical $padding-base-horizontal;
+  height: 35px;
+  padding: $padding-base-vertical 35px $padding-base-vertical $padding-base-horizontal;
   font-size: 15px;
   line-height: $line-height-computed;
   color: $text-color;
@@ -54,7 +54,7 @@ select {
     height: $input-height-small;
     line-height: $input-height-small;
     font-size: $font-size-small;
-    padding: 0 36px $padding-small-vertical $padding-small-horizontal;
+    padding: 0 35px $padding-small-vertical $padding-small-horizontal;
   }
 }
 
