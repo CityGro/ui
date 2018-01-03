@@ -201,7 +201,7 @@
     }
 
     .modal-body {
-      overflow-y: scroll;
+      overflow-y: auto;
 
       &.no-scroll {
         overflow-y: initial;

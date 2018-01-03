@@ -21,7 +21,7 @@
     @media (max-width: $screen-md-max) {
       flex: 1;
       overflow-y: hidden;
-      overflow-x: scroll;
+      overflow-x: auto;
       min-height: min-content;
       align-items: flex-start !important;
       justify-content: flex-start !important;

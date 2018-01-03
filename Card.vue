@@ -46,7 +46,7 @@
       font-size: small;
       margin-bottom: 10px;
       height: 66%;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
 
     .action {
