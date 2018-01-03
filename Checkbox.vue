@@ -1,9 +1,9 @@
 <template>
-  <div class="ui-checkbox" :class="classDef" @click.prevent="onClick">
+  <div class="ui-checkbox" :class="classDef" @click.stop="onClick">
     <input
       ref="checkbox"
       type="checkbox"
-      :checked="isChecked"
+      :checked="value"
       :disabled="disabled"
     />
     <span :style="spanStyle">
@@ -101,12 +101,6 @@
 </style>
 
 <script>
-import property from 'lodash/property'
-import isArray from 'lodash/isArray'
-import reject from 'lodash/reject'
-import includes from 'lodash/includes'
-import concat from 'lodash/concat'
-
 /**
  * @module ui/Checkbox
  * @param {Boolean} value - is checked?
@@ -121,7 +115,7 @@ export default {
   name: 'ui-checkbox',
   props: {
     value: {
-      type: [Array, Boolean],
+      type: Boolean,
       default: false
     },
     inline: {
@@ -157,41 +151,12 @@ export default {
         'checkbox-md': this.size === 'md',
         'checkbox-sm': this.size === 'sm'
       }
-    },
-    isChecked () {
-      if (isArray(this.value)) {
-        const checkedValue = this.checkedValue()
-        return includes(this.value, checkedValue)
-      } else {
-        return this.value
-      }
     }
   },
   methods: {
-    checkedValue () {
-      return property('attributes.value.value')(this.$el)
-    },
     onClick (event) {
-      // Hackish way to determine if SHIFT was pressed when the value changes
-      this.lastMouseEvent = event
-      try {
-        event.shiftKey = this.lastMouseEvent && this.lastMouseEvent.shiftKey
-      } catch (e) {}
-      const checked = this.$refs.checkbox.checked
-      if (isArray(this.value)) {
-        const checkedValue = this.checkedValue()
-        if (checked && includes(this.value, checkedValue)) {
-          this.$emit('input', this.value)
-        } else if (checked) {
-          this.$emit('input', concat(this.value, [checkedValue]))
-        } else {
-          this.$emit('input', reject(this.value, (value) => value === checkedValue))
-        }
-      } else {
-        this.$emit('input', !checked)
-      }
-      // Useful for determining if the shift key is pressed when clicked (event.shiftKey)
-      this.$emit('inputEvent', event)
+      this.$emit('input', !this.value)
+      this.$emit('click', event)
     }
   }
 }
