@@ -127,6 +127,7 @@ export default {
     h6 {
       margin: 0;
       padding-left: 0.25em;
+      line-height: 1.2;
     }
 
     .ui-section-header-content {

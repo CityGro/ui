@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-switch" :class="stateClass" role="button" @click="handleClick">
+  <div class="ui-switch ui-toggle" :class="stateClass" role="button" @click="handleClick">
     <div class="state" :class="stateClass">
       <span class="sr-only">
         this switch is {{ state }}
@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss" scoped>
-  .ui-switch {
+  .ui-toggle {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -71,7 +71,7 @@
 
 <script>
 export default {
-  name: 'ui-switch',
+  name: 'ui-toggle',
   props: {
     value: {
       type: Boolean,
