@@ -1,20 +1,19 @@
 <template>
-  <!-- TODO deprecate unprefixed class names -->
-  <div class="ui-card card">
-    <header class="title">
+  <div class="ui-card" @click="$emit('click', $event)">
+    <header class="title" @click="$emit('click', $event)">
       <slot name="title" />
     </header>
-    <div class="content">
+    <div class="content" @click="$emit('click', $event)">
       <slot />
     </div>
-    <div class="action">
+    <div class="action" @click="$emit('click', $event)">
       <slot name="action" />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-  .card {
+  .ui-card {
     $width: 14em;
 
     display: flex;
@@ -40,6 +39,11 @@
       & > h6 {
         margin-top: 0;
       }
+    }
+
+    &.active {
+      background-color: $brand-primary;
+      color: $component-active-color;
     }
 
     .content {
