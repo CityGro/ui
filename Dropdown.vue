@@ -6,7 +6,7 @@
     <span
       ref="dropdownButton"
       class="ui-dropdown-button"
-      @click="handleClick">
+      @click.stop="handleClick">
       <slot/>
     </span>
     <div
@@ -17,7 +17,7 @@
       @mouseover="cancelTimeout"
       @click="handleMenuClick">
       <div class="ui-dropdown-content-wrapper">
-        <slot name="content" />
+        <slot v-if="visible" name="content" />
       </div>
     </div>
   </div>
@@ -139,7 +139,24 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    createPopper () {
+      if (!this.popper) {
+        this.popper = new Popper(this.$refs.dropdownButton, this.$refs.dropdownContent, {
+          placement: this.placements,
+          removeOnDestroy: true,
+          modifiers: {
+            preventOverflow: {
+              enabled: true
+            },
+            flip: {
+              enabled: true
+            }
+          }
+        })
+      }
+    },
+    handleClick (event) {
+      this.$emit('click', event)
       if (this.visible) {
         return this.handleClose()
       }
@@ -200,28 +217,23 @@ export default {
       this.handleClose()
     }
   },
-  mounted () {
-    this.popper = new Popper(this.$refs.dropdownButton, this.$refs.dropdownContent, {
-      placement: this.placements,
-      removeOnDestroy: true,
-      modifiers: {
-        preventOverflow: {
-          enabled: true
-        },
-        flip: {
-          enabled: true
-        }
-      }
-    })
-  },
   updated () {
-    this.popper.update()
+    if (this.popper) {
+      this.$nextTick(() => this.popper.update())
+    }
   },
   beforeDestroy () {
     this.$off('close', this.handleClose)
     $(document).off('click', this.closeFn)
     $(this.$el).parents().off('click', this.closeFn)
-    this.popper.destroy()
+    if (this.popper) {
+      this.popper.destroy()
+    }
+  },
+  watch: {
+    visible () {
+      this.createPopper()
+    }
   }
 }
 </script>
