@@ -1,6 +1,6 @@
 <template>
   <div class="ui-modal-header modal-header">
-    <a class="close" @click="$emit('close') && $emit('dismiss')">
+    <a class="close" @click="$emit('dismiss')">
       <icon name="times" />
     </a>
     <h3 class="modal-title ui-pretty-overflow">
