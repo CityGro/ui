@@ -72,7 +72,7 @@ export default {
   header.ui-section-header {
     color: $text;
     margin-bottom: 1em;
-    padding-bottom: 0.5em;
+    padding-bottom: $padding-base-vertical;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -128,10 +128,15 @@ export default {
       margin: 0;
       padding-left: 0.25em;
       line-height: 1.2;
+      flex: 1;
     }
 
     .ui-section-header-content {
       margin-left: auto;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: $padding-base-vertical;
+      justify-content: flex-end;
     }
   }
 </style>
