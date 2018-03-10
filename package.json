@@ -35,8 +35,10 @@
       "transform-object-rest-spread"
     ]
   },
+  "peerDependencies": {
+    "@citygro/vue-modal": "5.2.5"
+  },
   "dependencies": {
-    "@citygro/vue-modal": "5.2.5",
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",

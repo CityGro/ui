@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@citygro/vue-modal@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@citygro/vue-modal/-/vue-modal-5.2.5.tgz#18458c0feb9e8f5ff8dd9543486e3a2046778cb3"
-  dependencies:
-    jquery "^3.1.1"
-    lodash "^4.17.2"
-    q "^1.4.1"
-
 abab@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
@@ -3764,7 +3756,7 @@ jest@^20.0.3:
   dependencies:
     jest-cli "^20.0.4"
 
-jquery@^3.1.1, jquery@^3.2.1:
+jquery@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
@@ -5271,7 +5263,7 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-q@^1.1.2, q@^1.4.1:
+q@^1.1.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
 
