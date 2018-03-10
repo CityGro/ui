@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-checkbox" :class="classDef" @click.stop="onClick">
+  <div class="ui-checkbox" :class="classDef" @click.prevent.stop="onClick">
     <input
       ref="checkbox"
       type="checkbox"
