@@ -1,14 +1,33 @@
 <template>
-  <div class="ui-datetime-input">
+  <div
+    v-if="compact"
+    class="ui-datetime-input ui-compact"
+  >
     <div class="select-day form-group">
-      <label>
+      <date-input :value="date" @input="handleDateChange($event)" />
+    </div>
+    <div class="select-time form-group">
+      <time-input :value="time" @input="handleTimeChange($event)" />
+      <div class="text-right">
+        <p>{{tz}} Timezone</p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ui-datetime-input"
+    v-else
+  >
+    <div class="select-day form-group">
+      <label class="control-label">
         Date
       </label>
       <date-input :value="date" @input="handleDateChange($event)" />
     </div>
     <div class="select-time form-group">
-      <label>
-        <slot name="time-label">Time</slot>
+      <label class="control-label">
+        <slot name="time-label">
+          Time
+        </slot>
       </label>
       <time-input :value="time" @input="handleTimeChange($event)" />
       <div class="text-right">
@@ -17,6 +36,34 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  .ui-date-input,
+  .ui-time-input {
+    display: block;
+  }
+  .select-time p {
+    font-size: $font-size-small;
+  }
+
+  .ui-datetime-input.ui-compact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .select-day {
+      padding-bottom: 1.75em;
+    }
+
+    .select-time {
+      padding-left: $padding-small-horizontal;
+    }
+  }
+</style>
 
 <script>
 import moment from 'moment-timezone'
@@ -38,6 +85,10 @@ export default {
     tz: {
       type: String,
       default: () => moment.tz.guess()
+    },
+    compact: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -75,13 +126,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .ui-date-input,
-  .ui-time-input {
-    display: block;
-  }
-  .select-time p {
-    font-size: $font-size-small;
-  }
-</style>
