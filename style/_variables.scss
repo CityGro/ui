@@ -93,6 +93,8 @@ $state-warning-bg: lighten($brand-warning, 25%);
 $state-danger-text: $brand-danger;
 $state-danger-bg: lighten($brand-danger, 25%);
 
+$cursor-disabled: default;
+
 // z-index master list
 //
 // Warning: Avoid customizing these values. They're used for a bird's eye view
