@@ -8,11 +8,7 @@
         Check the <a href="https://gitlab.com/citygro/ui" target="_blank">docs</a> for details :)
       </div>
     </slot>
-    <slot name="footer">
-      <footer class="modal-footer">
-        <button class="btn btn-primary" @click="$parent.dismiss"> OK </button>
-      </footer>
-    </slot>
+    <slot name="footer" />
   </div>
 </template>
 
